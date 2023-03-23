@@ -1,0 +1,16 @@
+{
+    "name": "John F. Kennedy",
+    "nickname": "JFK",
+    "image": "https://static.wikia.nocookie.net/southpark/images/d/d5/John-f-kennedy-and-son_copy.png/",
+    "occupation": "Former U.S. President",
+    "age": 46,
+    "voicedBy": "Trey Parker",
+    "gender": "Male",
+    "religion": "Roman Catholic",
+    "catchPhrase": "Ich bin ein Berliner.",
+    "hairColor": "Gray",
+    "schoolGrade": "",
+    "episodes": "S03E15",
+    "appearances": 1,
+    "firstAppearance": "S03E15"
+}
