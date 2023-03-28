@@ -9,7 +9,7 @@
     "religion": "Roman Catholic",
     "catchPhrase": "Ich bin ein Berliner.",
     "hairColor": "Gray",
-    "schoolGrade": "",
+    "schoolGrade": null,
     "episodes": "S03E15",
     "appearances": 1,
     "firstAppearance": "S03E15"
