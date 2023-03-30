@@ -4,7 +4,9 @@ window.addEventListener("load", start);
 
 async function start() {
     const characters = await getData();
-    characters.forEach(addCharacter);
+    for (const character of characters)
+    {addCharacter(character)}
+    // characters.forEach(addCharacter);
 }
 
 async function getData() {
@@ -30,7 +32,6 @@ document.querySelector("#characters article:last-child").addEventListener("click
 function clickCharacter() {
         showCharacter(character);
 }
-
 }
 
 function showCharacter(character) {
@@ -46,10 +47,27 @@ function showCharacter(character) {
     document.querySelector("#catchphrase").textContent = character.catchPhrase
     document.querySelector("#haircolor").textContent = character.hairColor
     document.querySelector("#schoolgrade").textContent = character.schoolGrade
-    document.querySelector("#episodes").textContent = character.episodes
-    document.querySelector("#appearances").textContent = character.appearances
-    document.querySelector("#firstappearance").textContent = character.firstAppearance
+    // document.querySelector("#episodes").textContent = character.episodes
+    // document.querySelector("#appearances").textContent = character.appearances
+    // document.querySelector("#firstappearance").textContent = character.firstAppearance
+
+    document.querySelector("#characterepisodes").textContent = characterText(character)
 }
 
 
+function characterText(character) {
+    let generalText = `${character.name} first appeared in South Park season ${character.firstAppearance.slice(1,3)} episode ${character.firstAppearance.slice(4,)}. `;
+    let specificText = "";
+    if (character.appearances == 1) {
+        specificText = `${character.name} only appeared this one time.`
+    } else if (character.appearances >= 1) {
+        specificText = `${character.name} appeared in a total of ${character.appearances} episodes. They are the following: ${character.episodes}`
+    } else if (character.appearances == null) {
+        specificText = "Jason Null has been here!"
+    }  else if (character.appearances == 0) {
+        specificText = "Apparently he has zero appearances in the series if Jason is to be trusted!!!"
+    }
 
+    let totalDescription = generalText+specificText
+    return totalDescription
+}

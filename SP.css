@@ -1,45 +1,30 @@
 /* ---------- root variables ---------- */
 :root {
-    --green: rgb(38, 76, 89);
-    --light-green: rgb(172, 198, 201);
-    --light-grey: #f1f1f4;
-    --text-color-light: #f1f1f1;
-    --text-color-dark: #333;
-    --white: #f2f2f2;
-    --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --green: #0d840bd8;
+    --cyan: rgb(80, 167, 176);
+    --red: rgb(184, 60, 26);
+    --text-light: #F5BE8D;
 }
 
 /* ---------- general styling ---------- */
 html {
-    color: var(--text-color-dark);
-    font-family: var(--font-family);
+    color: #161010;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 100%;
     width: 100%;
 }
 
 body {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    text-align: center;
 }
 
 h1 {
     font-size: 2em;
-    font-weight: 500;
-    letter-spacing: 0.1px;
+    font-weight: 5000;
+    letter-spacing: 0.15px;
     text-align: center;
-}
-
-h2 {
-    font-weight: 900;
-}
-
-h3 {
-    font-weight: 900;
-}
-
-a {
-    cursor: pointer;
-    color: var(--green);
 }
 
 img {
@@ -50,49 +35,35 @@ img {
 /* ---------- header styling ---------- */
 header {
     background-color: var(--green);
-    color: var(--text-color-light);
-    padding: 1em;
+    color: var(--text-light);
+    padding: 0.7em;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 9999;
 }
 
 /* ---------- footer styling ---------- */
 
 footer {
     background-color: var(--green);
-    color: var(--text-color-light);
+    color: var(--text-light);
     padding: 1em;
     text-align: center;
 }
 
 /* ---------- main page styling ---------- */
 main {
-    background: var(--light-green);
-    animation: fadeIn 0.4s;
-    padding: 137px 0 0;
-}
-
-/* ---------- animations ---------- */
-/* fade in */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    background: var(--cyan);
+    padding: 127px 0 0;
 }
 
 /* ---------- grid container styling ---------- */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1em;
-    padding: 1em;
+    gap: 0.8em;
+    padding: 0.8em;
 }
 
 @media (min-width: 600px) {
@@ -101,7 +72,7 @@ main {
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 900px) {
     .grid-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -120,16 +91,14 @@ main {
 /* ---------- grid item styling ---------- */
 
 .grid-item {
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-    padding: 1.5em;
-    background-color: var(--white);
-    transition: 0.5s;
-    animation: fadeIn 0.5s;
+    box-shadow: 0.5px 5px 6px rgba(0, 0, 0, 0.25);
+    padding: 0.6em;
+    background-color: #eacfcf;;
     cursor: pointer;
 }
 
 .grid-item:hover {
-    box-shadow: 0 8px 16px 0 var(--green);
+    box-shadow: 0.5px 8px 10px 1px var(--red);
 }
 
 .grid-item img {
@@ -138,88 +107,57 @@ main {
     object-fit: cover;
 }
 
-.grid-item p {
-    margin: 0.3em 0;
-}
-
-/* ---------- buttons in grid container ---------- */
-
-.grid-container .btns {
-    padding: 1em 0 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-}
-
-.grid-container .btns button {
-    width: 100%;
-}
-
-/* ---------- form styling ---------- */
-/* input form styling */
+/* ---------- form and button styling ---------- */
 form {
-    margin: 2em auto 0;
-    background-color: var(--light-green);
+    margin: 2em 0.2em 0;
+    background-color: var(--cyan);
     padding: 1em 1em 2em;
     text-align: center;
 }
 
 button {
-    font-weight: 300;
+    font-weight: 1000;
     font-size: 1em;
     text-align: center;
     cursor: pointer;
     border: none;
-    border-radius: 0;
-    color: var(--text-color-light);
-    background-color: var(--green);
+    border-radius: 1em;
+    color: var(--text-light);
+    background-color: var(--red);
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    padding: 0.5em 1em;
-    width: 100%;
+    padding: 0.5em;
+    width: 90%;
     max-width: 380px;
-}
-
-input {
-    margin: 1em auto;
-    width: 100%;
-    max-width: 350px;
-    padding: 1em;
-    border: 2px solid var(--green);
-    display: block;
-    background: var(--white);
 }
 
 /* ---------- dialog styling ---------- */
 
 dialog {
-    border-color: var(--green);
-    background-color: var(--light-green);
-    width: 65vw;
+    border-color: var(--red);
+    background-color: var(--cyan);
+    width: 70vw;
     padding: 0em 1em;
 }
 
 dialog::backdrop {
-    background: rgb(172, 198, 201, 0.8);
+    background: rgba(91, 96, 97, 0.8);
 }
 
 .dialog-grid {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 dialog h4 {
-    margin-bottom: 0;
+    font-size: 1.2em;
+    font-weight: 800;
+    margin-bottom: 0.3em;
 }
+
 dialog ul {
+    font-size: 0.9em;
     margin: 0.5em 0 1em;
     padding-inline-start: 1.5em;
 }
-dialog p {
-    margin: 0.5em 0 1em;
-}
-
-dialog::backdrop {
-    cursor: pointer;
-  }
