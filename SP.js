@@ -4,9 +4,14 @@ window.addEventListener("load", start);
 
 async function start() {
     const characters = await getData();
+    characters.sort(sortCharacters);
     for (const character of characters)
     {addCharacter(character)}
     // characters.forEach(addCharacter);
+}
+
+function sortCharacters(characterA, characterB) {
+    return characterA.name.localeCompare(characterB.name)
 }
 
 async function getData() {
@@ -36,6 +41,7 @@ function clickCharacter() {
 
 function showCharacter(character) {
     document.querySelector("#character").showModal();
+
     document.querySelector("#image").src = character.image
     document.querySelector("#name").textContent = character.name
     document.querySelector("#nickname").textContent = character.nickname
@@ -47,15 +53,12 @@ function showCharacter(character) {
     document.querySelector("#catchphrase").textContent = character.catchPhrase
     document.querySelector("#haircolor").textContent = character.hairColor
     document.querySelector("#schoolgrade").textContent = character.schoolGrade
-    // document.querySelector("#episodes").textContent = character.episodes
-    // document.querySelector("#appearances").textContent = character.appearances
-    // document.querySelector("#firstappearance").textContent = character.firstAppearance
 
-    document.querySelector("#characterepisodes").textContent = characterText(character)
+    document.querySelector("#characterdescription").textContent = generateCharacterDescription(character)
 }
 
 
-function characterText(character) {
+function generateCharacterDescription(character) {
     let generalText = `${character.name} first appeared in South Park season ${character.firstAppearance.slice(1,3)} episode ${character.firstAppearance.slice(4,)}. `;
     let specificText = "";
     if (character.appearances == 1) {
